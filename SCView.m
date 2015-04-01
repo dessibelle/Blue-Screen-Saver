@@ -10,17 +10,6 @@
 
 @implementation SCView
 
-@synthesize backgroundColor = _backgroundColor, 
-contentString = _contentString, 
-captionString = _captionString,
-font = _font,
-drawingAttributes = _drawingAttributes,
-captionBackgroundColor = _captionBackgroundColor,
-captionDrawingAttributes = _captionDrawingAttributes,
-hasUnderscoreSuffix = _hasUnderscoreSuffix,
-xp = _xp,
-fatal = _fatal,
-defaults = _defaults;
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
@@ -170,24 +159,35 @@ defaults = _defaults;
 
 - (BOOL)hasConfigureSheet
 {
-    return NO;
+    return YES;
 }
 
 - (NSWindow *)configureSheet
 {
-    return nil;
+    ScreenSaverDefaults *defaults;
+    
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"BlueScreenSaver"];
+    
+    if (!self.configSheet)
+    {
+        NSArray *topLevelObjects;
+        
+        if (![[NSBundle mainBundle] loadNibNamed:@"ConfigureSheet" owner:self topLevelObjects:&topLevelObjects])
+        {
+            NSLog( @"Failed to load configure sheet." );
+            NSBeep();
+        }
+    }
+    
+//    [drawFilledShapesOption setState:[defaults
+//                                      boolForKey:@"DrawFilledShapes"]];
+//    [drawOutlinedShapesOption setState:[defaults
+//                                        boolForKey:@"DrawOutlinedShapes"]];
+//    [drawBothOption setState:[defaults boolForKey:@"DrawBoth"]];
+    
+    return self.configSheet;
+
 }
 
-- (void)dealloc
-{
-	self.backgroundColor = nil;
-	self.font = nil;
-	self.contentString = nil;
-	self.drawingAttributes = nil;
-	self.captionBackgroundColor = nil;
-	self.captionDrawingAttributes = nil;	
-
-	[super dealloc];
-}
 
 @end

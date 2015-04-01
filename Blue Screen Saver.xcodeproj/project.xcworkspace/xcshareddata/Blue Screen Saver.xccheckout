@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B8C5D77C-E258-4971-911C-7C1967D17030</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Blue Screen Saver</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9F1FBFA23551FE28D12A140AD44A2A5DE6F3188C</key>
+		<string>github.com:dessibelle/Blue-Screen-Saver</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Blue Screen Saver.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9F1FBFA23551FE28D12A140AD44A2A5DE6F3188C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:dessibelle/Blue-Screen-Saver</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9F1FBFA23551FE28D12A140AD44A2A5DE6F3188C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9F1FBFA23551FE28D12A140AD44A2A5DE6F3188C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Blue-Screen-Saver</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A25995A1ACC40AF00548F4D /* ConfigureSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A2599591ACC40AF00548F4D /* ConfigureSheet.xib */; };
 		8D255AC70486D3F9007BF209 /* SC_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* SC_Prefix.pch */; };
 		8D255AC80486D3F9007BF209 /* SCView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* SCView.h */; };
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
@@ -37,6 +38,7 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCFA80370C50100C91783 /* SC_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Prefix.pch; sourceTree = "<group>"; };
+		6A2599591ACC40AF00548F4D /* ConfigureSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigureSheet.xib; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* Blue Screen Saver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blue Screen Saver.saver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42E5E8E11945F8D00EDAACB /* FixedDisplay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FixedDisplay.ttf; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				F42E5E8E11945F8D00EDAACB /* FixedDisplay.ttf */,
 				F49FF8DC11A6DB0900FFCF73 /* Lucida Console.ttf */,
 				8D255AD20486D3F9007BF209 /* Info.plist */,
+				6A2599591ACC40AF00548F4D /* ConfigureSheet.xib */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 			);
 			name = Resources;
@@ -203,6 +206,7 @@
 			files = (
 				8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */,
 				F49FF8DD11A6DB0900FFCF73 /* Lucida Console.ttf in Resources */,
+				6A25995A1ACC40AF00548F4D /* ConfigureSheet.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,10 +248,11 @@
 		EF7AD72E08BB986600CE4634 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_ENABLE_OBJC_GC = "";
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -266,9 +271,10 @@
 		EF7AD72F08BB986600CE4634 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_GC = "";
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SC_Prefix.pch;
