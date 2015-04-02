@@ -26,6 +26,6 @@
 
 @property (strong)  IBOutlet NSWindow       *configSheet;
 @property (strong)  IBOutlet NSSlider       *typeSlider;
-@property (strong)  IBOutlet NSButton       *fatalButton;
+@property (strong)  IBOutlet NSSlider       *fatalitySlider;
 
 @end

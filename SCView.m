@@ -15,6 +15,17 @@
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
+        
+        ScreenSaverDefaults *defaults;
+        defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"BlueScreenSaver"];
+        
+        // Register our default values
+        [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
+                                    @50, @"CrashType",
+                                    @50, @"Fatality",
+                                    nil]];
+        
+        
 		self.backgroundColor = [NSColor colorWithCalibratedRed:(1.0/255.0) green:(2.0/255.0) blue:(172.0/255.0) alpha:1.0];
 		self.captionBackgroundColor = [NSColor colorWithCalibratedRed:(169.0/255.0) green:(170.0/255.0) blue:(174.0/255.0) alpha:1.0];
 		self.hasUnderscoreSuffix = NO;
@@ -165,7 +176,6 @@
 - (NSWindow *)configureSheet
 {
     ScreenSaverDefaults *defaults;
-    
     defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"BlueScreenSaver"];
     
     if (!self.configSheet)
@@ -178,13 +188,7 @@
             NSBeep();
         }
     }
-    
-//    [drawFilledShapesOption setState:[defaults
-//                                      boolForKey:@"DrawFilledShapes"]];
-//    [drawOutlinedShapesOption setState:[defaults
-//                                        boolForKey:@"DrawOutlinedShapes"]];
-//    [drawBothOption setState:[defaults boolForKey:@"DrawBoth"]];
-    
+
     return self.configSheet;
 
 }
