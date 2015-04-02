@@ -23,7 +23,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>NSPrincipalClass</key>
-	<string>SCView</string>
+	<string>BSODSaverView</string>
 	<key>ATSApplicationFontsPath</key>
 	<string>Fonts</string>
 </dict>

@@ -6,9 +6,9 @@
 //  Copyright (c) 2010, Hobo Code. All rights reserved.
 //
 
-#import "SCView.h"
+#import "BSODSaverView.h"
 
-@implementation SCView
+@implementation BSODSaverView
 
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview

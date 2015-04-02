@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SCView">
+        <customObject id="-2" userLabel="File's Owner" customClass="BSODSaverView">
             <connections>
                 <outlet property="configSheet" destination="Ghk-52-BAl" id="Kb5-ZS-ciT"/>
                 <outlet property="fatalitySlider" destination="E4E-ok-OKz" id="7ix-XC-hfb"/>

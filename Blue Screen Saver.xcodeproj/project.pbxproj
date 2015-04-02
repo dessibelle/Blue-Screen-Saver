@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6A25995A1ACC40AF00548F4D /* ConfigureSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A2599591ACC40AF00548F4D /* ConfigureSheet.xib */; };
+		6AF918601ACD3C79002656AE /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF9185E1ACD3C79002656AE /* thumbnail.png */; };
+		6AF918611ACD3C79002656AE /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF9185F1ACD3C79002656AE /* thumbnail@2x.png */; };
 		8D255AC70486D3F9007BF209 /* SC_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCFA80370C50100C91783 /* SC_Prefix.pch */; };
-		8D255AC80486D3F9007BF209 /* SCView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* SCView.h */; };
+		8D255AC80486D3F9007BF209 /* BSODSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* BSODSaverView.h */; };
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
-		8D255ACC0486D3F9007BF209 /* SCView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* SCView.m */; };
+		8D255ACC0486D3F9007BF209 /* BSODSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* BSODSaverView.m */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
 		F42E5E8F11945F8D00EDAACB /* FixedDisplay.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = F42E5E8E11945F8D00EDAACB /* FixedDisplay.ttf */; };
@@ -39,12 +41,14 @@
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCFA80370C50100C91783 /* SC_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SC_Prefix.pch; sourceTree = "<group>"; };
 		6A2599591ACC40AF00548F4D /* ConfigureSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigureSheet.xib; sourceTree = "<group>"; };
+		6AF9185E1ACD3C79002656AE /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
+		6AF9185F1ACD3C79002656AE /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* Blue Screen Saver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blue Screen Saver.saver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42E5E8E11945F8D00EDAACB /* FixedDisplay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FixedDisplay.ttf; sourceTree = "<group>"; };
 		F49FF8DC11A6DB0900FFCF73 /* Lucida Console.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lucida Console.ttf"; sourceTree = "<group>"; };
-		F50079790118B23001CA0E54 /* SCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCView.h; sourceTree = "<group>"; };
-		F500797A0118B23001CA0E54 /* SCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCView.m; sourceTree = "<group>"; };
+		F50079790118B23001CA0E54 /* BSODSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSODSaverView.h; sourceTree = "<group>"; };
+		F500797A0118B23001CA0E54 /* BSODSaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSODSaverView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6AF9185E1ACD3C79002656AE /* thumbnail.png */,
+				6AF9185F1ACD3C79002656AE /* thumbnail@2x.png */,
 				F42E5E8E11945F8D00EDAACB /* FixedDisplay.ttf */,
 				F49FF8DC11A6DB0900FFCF73 /* Lucida Console.ttf */,
 				8D255AD20486D3F9007BF209 /* Info.plist */,
@@ -96,8 +102,8 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F50079790118B23001CA0E54 /* SCView.h */,
-				F500797A0118B23001CA0E54 /* SCView.m */,
+				F50079790118B23001CA0E54 /* BSODSaverView.h */,
+				F500797A0118B23001CA0E54 /* BSODSaverView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -144,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D255AC70486D3F9007BF209 /* SC_Prefix.pch in Headers */,
-				8D255AC80486D3F9007BF209 /* SCView.h in Headers */,
+				8D255AC80486D3F9007BF209 /* BSODSaverView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,8 +210,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AF918601ACD3C79002656AE /* thumbnail.png in Resources */,
 				8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */,
 				F49FF8DD11A6DB0900FFCF73 /* Lucida Console.ttf in Resources */,
+				6AF918611ACD3C79002656AE /* thumbnail@2x.png in Resources */,
 				6A25995A1ACC40AF00548F4D /* ConfigureSheet.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,7 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D255ACC0486D3F9007BF209 /* SCView.m in Sources */,
+				8D255ACC0486D3F9007BF209 /* BSODSaverView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

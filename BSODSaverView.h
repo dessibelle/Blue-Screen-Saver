@@ -9,7 +9,7 @@
 #import <ScreenSaver/ScreenSaver.h>
 
 
-@interface SCView : ScreenSaverView 
+@interface BSODSaverView : ScreenSaverView 
 {}
 
 @property (strong)	NSColor					*backgroundColor;
