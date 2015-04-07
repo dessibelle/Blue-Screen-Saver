@@ -28,4 +28,7 @@
 @property (strong)  IBOutlet NSSlider       *typeSlider;
 @property (strong)  IBOutlet NSSlider       *fatalitySlider;
 
+- (IBAction)configSheetCancelAction:(id)sender;
+- (IBAction)configSheetOKAction:(id)sender;
+
 @end

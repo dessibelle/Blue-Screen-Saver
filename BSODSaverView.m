@@ -21,8 +21,8 @@
         
         // Register our default values
         [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-                                    @50, @"CrashType",
-                                    @50, @"Fatality",
+                                    @0.5, @"CrashType",
+                                    @0.5, @"Fatality",
                                     nil]];
         
         
@@ -175,22 +175,42 @@
 
 - (NSWindow *)configureSheet
 {
-    ScreenSaverDefaults *defaults;
-    defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"BlueScreenSaver"];
+    ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"BlueScreenSaver"];
     
     if (!self.configSheet)
     {
         NSArray *topLevelObjects;
         
-        if (![[NSBundle mainBundle] loadNibNamed:@"ConfigureSheet" owner:self topLevelObjects:&topLevelObjects])
+        if (![[NSBundle bundleForClass:[self class]] loadNibNamed:@"ConfigureSheet" owner:self topLevelObjects:&topLevelObjects])
         {
             NSLog( @"Failed to load configure sheet." );
             NSBeep();
         }
     }
-
+    
+    [self.fatalitySlider setFloatValue:[defaults floatForKey:@"Fatality"]];
+    [self.typeSlider setFloatValue:[defaults floatForKey:@"CrashType"]];
+    
     return self.configSheet;
 
+}
+
+#pragma mark IBACtions
+
+- (IBAction)configSheetCancelAction:(id)sender {
+    [[NSApplication sharedApplication] endSheet:self.configSheet];
+}
+
+- (IBAction)configSheetOKAction:(id)sender {
+    ScreenSaverDefaults *defaults;
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"BlueScreenSaver"];
+
+    [defaults setFloat:self.fatalitySlider.floatValue forKey:@"Fatality"];
+    [defaults setFloat:self.typeSlider.floatValue forKey:@"CrashType"];
+    
+    [defaults synchronize];
+    
+    [self configSheetCancelAction:sender];
 }
 
 
