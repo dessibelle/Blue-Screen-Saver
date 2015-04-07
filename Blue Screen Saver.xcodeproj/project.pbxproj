@@ -16,19 +16,32 @@
 		8D255ACC0486D3F9007BF209 /* BSODSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* BSODSaverView.m */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
-		F42E5E8F11945F8D00EDAACB /* FixedDisplay.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = F42E5E8E11945F8D00EDAACB /* FixedDisplay.ttf */; };
+		F42E5E8F11945F8D00EDAACB /* FixedDisplay.ttf in Copy Files */ = {isa = PBXBuildFile; fileRef = F42E5E8E11945F8D00EDAACB /* FixedDisplay.ttf */; };
+		F46183141AD43897002729F6 /* Blue Screen Saver.saver in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D255AD30486D3F9007BF209 /* Blue Screen Saver.saver */; };
 		F49FF8DD11A6DB0900FFCF73 /* Lucida Console.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F49FF8DC11A6DB0900FFCF73 /* Lucida Console.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F42E5E991194613800EDAACB /* CopyFiles */ = {
+		F42E5E991194613800EDAACB /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = Fonts;
 			dstSubfolderSpec = 7;
 			files = (
-				F42E5E8F11945F8D00EDAACB /* FixedDisplay.ttf in CopyFiles */,
+				F42E5E8F11945F8D00EDAACB /* FixedDisplay.ttf in Copy Files */,
 			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F46183131AD4386D002729F6 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "~/Library/Screen Savers";
+			dstSubfolderSpec = 0;
+			files = (
+				F46183141AD43897002729F6 /* Blue Screen Saver.saver in Copy Files */,
+			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -166,7 +179,8 @@
 				8D255ACB0486D3F9007BF209 /* Sources */,
 				8D255ACD0486D3F9007BF209 /* Frameworks */,
 				8D255AD00486D3F9007BF209 /* Rez */,
-				F42E5E991194613800EDAACB /* CopyFiles */,
+				F42E5E991194613800EDAACB /* Copy Files */,
+				F46183131AD4386D002729F6 /* Copy Files */,
 			);
 			buildRules = (
 			);

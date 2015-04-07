@@ -10,6 +10,7 @@
 
 @implementation BSODSaverView
 
+NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Saver";
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
@@ -31,7 +32,7 @@
 		self.hasUnderscoreSuffix = NO;
 		
 		[self setAnimationTimeInterval:1/1.5];
-		[self startAnimation];
+//		[self startAnimation];
 		
 		/* FixedsysTTF / FixedDisplay / FixedDisplay.ttf / Fixedsys True Type Font */
 		
@@ -51,12 +52,15 @@
 		if (error)
 			CFRelease(error);
 		
-		float fontSize = isPreview ? 9.0 : 15.0;
+		float fontSize = isPreview ? 6.0 : 15.0;
 		
-		srand( time(NULL) );
-		
-		self.fatal = (BOOL)(rand() % 2);
-		self.xp = (BOOL)(rand() % 2);
+		srand48(arc4random());
+        
+        double fatal_rand = drand48() -0.5 + [defaults doubleForKey:@"Fatality"];
+        double xp_rand = drand48() -0.5 + [defaults doubleForKey:@"CrashType"];
+    
+        self.fatal = fatal_rand >= 0.5;
+        self.xp = xp_rand >= 0.5;
 		
 		if (self.xp) {
 			self.font = [NSFont fontWithName:@"Menlo" size:fontSize];	
@@ -116,20 +120,10 @@
     return self;
 }
 
-- (void)startAnimation
-{
-    [super startAnimation];
-}
-
-- (void)stopAnimation
-{
-    [super stopAnimation];
-}
-
 - (void)animateOneFrame
 {
 	self.hasUnderscoreSuffix = !self.hasUnderscoreSuffix;
-	
+    
 	[self setNeedsDisplay:YES];
 }
 
@@ -168,6 +162,11 @@
 	[message drawInRect:contentRect withAttributes:self.drawingAttributes];
 }
 
++ (BOOL)performGammaFade
+{
+    return NO;
+}
+
 - (BOOL)hasConfigureSheet
 {
     return YES;
@@ -188,6 +187,7 @@
         }
     }
     
+    
     [self.fatalitySlider setFloatValue:[defaults floatForKey:@"Fatality"]];
     [self.typeSlider setFloatValue:[defaults floatForKey:@"CrashType"]];
     
@@ -197,11 +197,13 @@
 
 #pragma mark IBACtions
 
-- (IBAction)configSheetCancelAction:(id)sender {
+- (IBAction)configSheetCancelAction:(id)sender
+{
     [[NSApplication sharedApplication] endSheet:self.configSheet];
 }
 
-- (IBAction)configSheetOKAction:(id)sender {
+- (IBAction)configSheetOKAction:(id)sender
+{
     ScreenSaverDefaults *defaults;
     defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"BlueScreenSaver"];
 
@@ -211,6 +213,11 @@
     [defaults synchronize];
     
     [self configSheetCancelAction:sender];
+}
+
+- (IBAction)URLTextFieldClicked:(id)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kExternalURL]];
 }
 
 

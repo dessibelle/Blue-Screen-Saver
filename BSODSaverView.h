@@ -30,5 +30,6 @@
 
 - (IBAction)configSheetCancelAction:(id)sender;
 - (IBAction)configSheetOKAction:(id)sender;
+- (IBAction)URLTextFieldClicked:(id)sender;
 
 @end
