@@ -199,7 +199,12 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
 
 - (IBAction)configSheetCancelAction:(id)sender
 {
-    [[NSApplication sharedApplication] endSheet:self.configSheet];
+    if ([NSWindow respondsToSelector:@selector(endSheet:)])
+    {
+        [[self.configSheet sheetParent] endSheet:self.configSheet returnCode:NSModalResponseCancel];
+    } else {
+        [[NSApplication sharedApplication] endSheet:self.configSheet];
+    }
 }
 
 - (IBAction)configSheetOKAction:(id)sender
