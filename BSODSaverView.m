@@ -8,6 +8,11 @@
 
 #import "BSODSaverView.h"
 
+@interface BSODSaverView (Private)
+- (void)loadFontWithName:(NSString *)fontName inBundle:(NSBundle *)bundle;
+@end
+
+
 @implementation BSODSaverView
 
 NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Saver";
@@ -32,25 +37,14 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
 		self.hasUnderscoreSuffix = NO;
 		
 		[self setAnimationTimeInterval:1/1.5];
-//		[self startAnimation];
 		
-		/* FixedsysTTF / FixedDisplay / FixedDisplay.ttf / Fixedsys True Type Font */
-		
+		/* FixedsysTTF / LucidaConsole: File names must match post script names */
 		NSString *bundleIdentifier = [[[NSBundle bundleForClass:[self class]] infoDictionary] objectForKey:@"CFBundleIdentifier"];
 		self.defaults = [ScreenSaverDefaults defaultsForModuleWithName:bundleIdentifier];
-		
-		//CTFontManagerSetAutoActivationSetting((CFStringRef)bundleIdentifier, kCTFontManagerAutoActivationEnabled);
-		
-		CFErrorRef error;
-		
-		NSURL *fontURL = [[[[[NSBundle bundleWithIdentifier:bundleIdentifier] resourceURL] URLByAppendingPathComponent:@"Fonts"] URLByAppendingPathComponent:@"FixedDisplay"] URLByAppendingPathExtension:@"ttf"];
-		BOOL fontActivated = CTFontManagerRegisterFontsForURL((CFURLRef)fontURL, kCTFontManagerScopeProcess, &error);
-		
-		if (NO)
-			NSLog(@"Font at path %@\n   was activated: %d\n   withErrors: %@", fontURL, fontActivated, error);
-		
-		if (error)
-			CFRelease(error);
+				
+        NSBundle *screenSaverBundle = [NSBundle bundleWithIdentifier:bundleIdentifier];
+        [self loadFontWithName:@"FixedsysTTF" inBundle:screenSaverBundle];
+        [self loadFontWithName:@"LucidaConsole" inBundle:screenSaverBundle];
 		
 		float fontSize = isPreview ? 6.0 : 15.0;
 		
@@ -63,7 +57,7 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
         self.xp = xp_rand >= 0.5;
 		
 		if (self.xp) {
-			self.font = [NSFont fontWithName:@"Menlo" size:fontSize];	
+			self.font = [NSFont fontWithName:@"LucidaConsole" size:fontSize];
 		} else {
 			self.font = [NSFont fontWithName:@"FixedsysTTF" size:fontSize];
 		}
@@ -124,7 +118,7 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
 {
 	self.hasUnderscoreSuffix = !self.hasUnderscoreSuffix;
     
-	[self setNeedsDisplay:YES];
+    [self setNeedsDisplay:YES];
 }
 
 - (void)drawRect:(NSRect)rect
@@ -193,6 +187,22 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
     
     return self.configSheet;
 
+}
+
+# pragma mark Private
+
+- (void)loadFontWithName:(NSString *)fontName inBundle:(NSBundle *)bundle {
+    NSArray *availableFonts = [[NSFontManager sharedFontManager] availableFonts];
+
+    if (![availableFonts containsObject:fontName]) {
+        NSURL *fontURL = [bundle URLForResource:fontName withExtension:@"ttf" subdirectory:@"Fonts"];
+        assert(fontURL);
+        CFErrorRef error = NULL;
+        if (!CTFontManagerRegisterFontsForURL((__bridge CFURLRef)fontURL, kCTFontManagerScopeProcess, &error))
+        {
+            CFShow(error);
+        }
+    }
 }
 
 #pragma mark IBACtions

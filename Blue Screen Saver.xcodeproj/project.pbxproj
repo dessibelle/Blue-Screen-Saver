@@ -16,32 +16,21 @@
 		8D255ACC0486D3F9007BF209 /* BSODSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* BSODSaverView.m */; };
 		8D255ACE0486D3F9007BF209 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		8D255ACF0486D3F9007BF209 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F27B2DFFEEEFEF11CA0E56 /* ScreenSaver.framework */; };
-		F42E5E8F11945F8D00EDAACB /* FixedDisplay.ttf in Copy Files */ = {isa = PBXBuildFile; fileRef = F42E5E8E11945F8D00EDAACB /* FixedDisplay.ttf */; };
-		F46183141AD43897002729F6 /* Blue Screen Saver.saver in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D255AD30486D3F9007BF209 /* Blue Screen Saver.saver */; };
-		F49FF8DD11A6DB0900FFCF73 /* Lucida Console.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F49FF8DC11A6DB0900FFCF73 /* Lucida Console.ttf */; };
+		F42E5E8F11945F8D00EDAACB /* FixedsysTTF.ttf in Copy Files (2 items) */ = {isa = PBXBuildFile; fileRef = F42E5E8E11945F8D00EDAACB /* FixedsysTTF.ttf */; };
+		F43449D41DE9BB8700FA7D91 /* LucidaConsole.ttf in Copy Files (2 items) */ = {isa = PBXBuildFile; fileRef = F49FF8DC11A6DB0900FFCF73 /* LucidaConsole.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F42E5E991194613800EDAACB /* Copy Files */ = {
+		F42E5E991194613800EDAACB /* Copy Files (2 items) */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = Fonts;
 			dstSubfolderSpec = 7;
 			files = (
-				F42E5E8F11945F8D00EDAACB /* FixedDisplay.ttf in Copy Files */,
+				F43449D41DE9BB8700FA7D91 /* LucidaConsole.ttf in Copy Files (2 items) */,
+				F42E5E8F11945F8D00EDAACB /* FixedsysTTF.ttf in Copy Files (2 items) */,
 			);
-			name = "Copy Files";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F46183131AD4386D002729F6 /* Copy Files */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "~/Library/Screen Savers";
-			dstSubfolderSpec = 0;
-			files = (
-				F46183141AD43897002729F6 /* Blue Screen Saver.saver in Copy Files */,
-			);
-			name = "Copy Files";
+			name = "Copy Files (2 items)";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -58,8 +47,8 @@
 		6AF9185F1ACD3C79002656AE /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* Blue Screen Saver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blue Screen Saver.saver"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F42E5E8E11945F8D00EDAACB /* FixedDisplay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FixedDisplay.ttf; sourceTree = "<group>"; };
-		F49FF8DC11A6DB0900FFCF73 /* Lucida Console.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lucida Console.ttf"; sourceTree = "<group>"; };
+		F42E5E8E11945F8D00EDAACB /* FixedsysTTF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FixedsysTTF.ttf; sourceTree = "<group>"; };
+		F49FF8DC11A6DB0900FFCF73 /* LucidaConsole.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LucidaConsole.ttf; sourceTree = "<group>"; };
 		F50079790118B23001CA0E54 /* BSODSaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSODSaverView.h; sourceTree = "<group>"; };
 		F500797A0118B23001CA0E54 /* BSODSaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSODSaverView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,8 +92,8 @@
 			children = (
 				6AF9185E1ACD3C79002656AE /* thumbnail.png */,
 				6AF9185F1ACD3C79002656AE /* thumbnail@2x.png */,
-				F42E5E8E11945F8D00EDAACB /* FixedDisplay.ttf */,
-				F49FF8DC11A6DB0900FFCF73 /* Lucida Console.ttf */,
+				F42E5E8E11945F8D00EDAACB /* FixedsysTTF.ttf */,
+				F49FF8DC11A6DB0900FFCF73 /* LucidaConsole.ttf */,
 				8D255AD20486D3F9007BF209 /* Info.plist */,
 				6A2599591ACC40AF00548F4D /* ConfigureSheet.xib */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
@@ -179,8 +168,7 @@
 				8D255ACB0486D3F9007BF209 /* Sources */,
 				8D255ACD0486D3F9007BF209 /* Frameworks */,
 				8D255AD00486D3F9007BF209 /* Rez */,
-				F42E5E991194613800EDAACB /* Copy Files */,
-				F46183131AD4386D002729F6 /* Copy Files */,
+				F42E5E991194613800EDAACB /* Copy Files (2 items) */,
 			);
 			buildRules = (
 			);
@@ -226,7 +214,6 @@
 			files = (
 				6AF918601ACD3C79002656AE /* thumbnail.png in Resources */,
 				8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */,
-				F49FF8DD11A6DB0900FFCF73 /* Lucida Console.ttf in Resources */,
 				6AF918611ACD3C79002656AE /* thumbnail@2x.png in Resources */,
 				6A25995A1ACC40AF00548F4D /* ConfigureSheet.xib in Resources */,
 			);

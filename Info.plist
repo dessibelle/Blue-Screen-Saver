@@ -19,9 +19,9 @@
 	<key>CFBundleSignature</key>
 	<string>DBbs</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.1</string>
 	<key>NSPrincipalClass</key>
 	<string>BSODSaverView</string>
 	<key>ATSApplicationFontsPath</key>
