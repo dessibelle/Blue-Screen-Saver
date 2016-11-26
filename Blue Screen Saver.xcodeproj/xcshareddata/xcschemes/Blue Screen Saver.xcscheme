@@ -47,7 +47,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "#!/bin/bash&#10;cp -Rf &quot;${PROJECT_DIR}/${CONFIGURATION_BUILD_DIR}/${EXECUTABLE_NAME}.saver&quot; ~/Library/Screen\ Savers&#10;"
+               scriptText = "#!/bin/bash&#10;rm -rf ~/Library/Screen\ Savers/&quot;${EXECUTABLE_NAME}&quot;.saver&#10;&#10;cp -Rf &quot;${PROJECT_DIR}/${CONFIGURATION_BUILD_DIR}/${EXECUTABLE_NAME}.saver&quot; ~/Library/Screen\ Savers&#10;"
                shellToInvoke = "/bin/bash">
                <EnvironmentBuildable>
                   <BuildableReference
