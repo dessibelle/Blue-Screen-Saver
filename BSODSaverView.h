@@ -27,6 +27,7 @@
 @property (strong)  IBOutlet NSWindow       *configSheet;
 @property (strong)  IBOutlet NSSlider       *typeSlider;
 @property (strong)  IBOutlet NSSlider       *fatalitySlider;
+@property (strong)  IBOutlet NSSlider       *fontSizeSlider;
 
 - (IBAction)configSheetCancelAction:(id)sender;
 - (IBAction)configSheetOKAction:(id)sender;

@@ -29,6 +29,7 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
         [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
                                     @0.5, @"CrashType",
                                     @0.5, @"Fatality",
+                                    @15, @"FontSize",
                                     nil]];
 
 
@@ -46,13 +47,12 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
         [self loadFontWithName:@"FixedsysTTF" inBundle:screenSaverBundle];
         [self loadFontWithName:@"LucidaConsole" inBundle:screenSaverBundle];
 
-		float fontSize = isPreview ? 6.0 : 15.0;
-
 		srand48(arc4random());
 
         double fatal_rand = drand48() -0.5 + [defaults doubleForKey:@"Fatality"];
         double xp_rand = drand48() -0.5 + [defaults doubleForKey:@"CrashType"];
 
+        float fontSize = isPreview ? 6.0 : [defaults doubleForKey:@"FontSize"];
         self.fatal = fatal_rand >= 0.5;
         self.xp = xp_rand >= 0.5;
 
@@ -184,6 +184,7 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
 
     [self.fatalitySlider setFloatValue:[defaults floatForKey:@"Fatality"]];
     [self.typeSlider setFloatValue:[defaults floatForKey:@"CrashType"]];
+    [self.fontSizeSlider setFloatValue:[defaults floatForKey:@"FontSize"]];
 
     return self.configSheet;
 
@@ -224,6 +225,7 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
 
     [defaults setFloat:self.fatalitySlider.floatValue forKey:@"Fatality"];
     [defaults setFloat:self.typeSlider.floatValue forKey:@"CrashType"];
+    [defaults setFloat:self.fontSizeSlider.floatValue forKey:@"FontSize"];
 
     [defaults synchronize];
 
