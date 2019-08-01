@@ -32,5 +32,6 @@
 - (IBAction)configSheetCancelAction:(id)sender;
 - (IBAction)configSheetOKAction:(id)sender;
 - (IBAction)URLTextFieldClicked:(id)sender;
+- (IBAction)resetDefaultSettingsClicked:(id)sender;
 
 @end

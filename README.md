@@ -1,3 +1,5 @@
 # Blue Screen Saver
 
-Fork 后添加了可在 macOS 「屏幕保护程序」里调整字体的功能。
+Just a simple screen saver for Mac OS X showing the Windows BSOD (blue screen of death). Randomizes between XP and NT mode.
+
+[Download](https://www.dropbox.com/s/30upmkpsdkyvjug/Blue-Screen-Saver.saver.zip?dl=1)

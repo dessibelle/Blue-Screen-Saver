@@ -8,6 +8,10 @@
 
 #import "BSODSaverView.h"
 
+#define DEFAULT_CRASH_TYPE  0.5
+#define DEFAULT_FATALITY    0.5
+#define DEFAULT_FONT_SIZE   15.0
+
 @interface BSODSaverView (Private)
 - (void)loadFontWithName:(NSString *)fontName inBundle:(NSBundle *)bundle;
 @end
@@ -27,9 +31,9 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
 
         // Register our default values
         [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-                                    @0.5, @"CrashType",
-                                    @0.5, @"Fatality",
-                                    @15, @"FontSize",
+                                    [NSNumber numberWithFloat: DEFAULT_CRASH_TYPE], @"CrashType",
+                                    [NSNumber numberWithFloat: DEFAULT_FATALITY], @"Fatality",
+                                    [NSNumber numberWithFloat: DEFAULT_FONT_SIZE], @"FontSize",
                                     nil]];
 
 
@@ -52,7 +56,7 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
         double fatal_rand = drand48() -0.5 + [defaults doubleForKey:@"Fatality"];
         double xp_rand = drand48() -0.5 + [defaults doubleForKey:@"CrashType"];
 
-        float fontSize = isPreview ? 6.0 : [defaults doubleForKey:@"FontSize"];
+        float fontSize = isPreview ? 6.0 : [defaults floatForKey:@"FontSize"];
         self.fatal = fatal_rand >= 0.5;
         self.xp = xp_rand >= 0.5;
 
@@ -237,5 +241,11 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kExternalURL]];
 }
 
+- (IBAction)resetDefaultSettingsClicked:(id)sender;
+{
+    self.fatalitySlider.floatValue = DEFAULT_CRASH_TYPE;
+    self.typeSlider.floatValue = DEFAULT_CRASH_TYPE;
+    self.fontSizeSlider.floatValue = DEFAULT_FONT_SIZE;
+}
 
 @end
