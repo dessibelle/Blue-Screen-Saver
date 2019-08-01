@@ -237,5 +237,11 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kExternalURL]];
 }
 
+- (IBAction)resetDefaultSettingsClicked:(id)sender;
+{
+    self.fatalitySlider.floatValue = 0.5;
+    self.typeSlider.floatValue = 0.5;
+    self.fontSizeSlider.floatValue = 15.0;
+}
 
 @end

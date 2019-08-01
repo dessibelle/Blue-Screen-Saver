@@ -19,7 +19,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="272" y="172" width="561" height="326"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <view key="contentView" id="SUB-Tc-ZhB">
                 <rect key="frame" x="0.0" y="0.0" width="561" height="326"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -161,6 +161,17 @@ Gw
                         </buttonCell>
                         <connections>
                             <action selector="URLTextFieldClicked:" target="-2" id="N2O-E3-SZM"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWM-8G-4HO">
+                        <rect key="frame" x="99" y="13" width="127" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Reset defaults" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="RpL-YB-rd5">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetDefaultSettingsClicked:" target="-2" id="nAe-Uj-vQG"/>
                         </connections>
                     </button>
                 </subviews>
