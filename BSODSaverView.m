@@ -56,7 +56,7 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
         double fatal_rand = drand48() -0.5 + [defaults doubleForKey:@"Fatality"];
         double xp_rand = drand48() -0.5 + [defaults doubleForKey:@"CrashType"];
 
-        float fontSize = isPreview ? 6.0 : [defaults doubleForKey:@"FontSize"];
+        float fontSize = isPreview ? 6.0 : [defaults floatForKey:@"FontSize"];
         self.fatal = fatal_rand >= 0.5;
         self.xp = xp_rand >= 0.5;
 
