@@ -25,7 +25,7 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
-
+        // NSLog(@"initWithFrame isPreview: %d %d", isPreview, [self isPreview]);
         ScreenSaverDefaults *defaults;
         defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"BlueScreenSaver"];
 
@@ -56,7 +56,7 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
         double fatal_rand = drand48() -0.5 + [defaults doubleForKey:@"Fatality"];
         double xp_rand = drand48() -0.5 + [defaults doubleForKey:@"CrashType"];
 
-        float fontSize = isPreview ? 6.0 : [defaults floatForKey:@"FontSize"];
+        CGFloat fontSize = [defaults floatForKey:@"FontSize"]; // !isPreview ? [defaults floatForKey:@"FontSize"] : 6.0;
         self.fatal = fatal_rand >= 0.5;
         self.xp = xp_rand >= 0.5;
 
@@ -127,8 +127,11 @@ NSString *const kExternalURL = @"http://www.github.com/dessibelle/Blue-Screen-Sa
 
 - (void)drawRect:(NSRect)rect
 {
+    /*
 	if (![self isPreview])
 		[[NSGraphicsContext currentContext] setShouldAntialias:NO];
+     */
+    [[NSGraphicsContext currentContext] setShouldAntialias:NO];
 
 	[self.backgroundColor set];
 	[self.font set];
